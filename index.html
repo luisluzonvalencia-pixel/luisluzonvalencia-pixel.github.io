@@ -1,614 +1,397 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Luis Luva | IoT, Electrónica y Telecomunicaciones</title>
+<title>Luis Luva | Electronics, IoT & Embedded Systems</title>
 
-  <meta name="description" content="Portafolio de Luis Alberto Luzon Valencia, conocido como Luis Luva. Proyectos con ESP32, IoT, LoRa, energía solar, automatización, PCB y sistemas embebidos." />
-  <meta name="keywords" content="Luis Luva, Luis Alberto Luzon Valencia, ESP32, IoT, LoRa, electrónica, telecomunicaciones, energía solar, PCB, automatización, sistemas embebidos, ThingsBoard, Telegram" />
-  <meta name="author" content="Luis Alberto Luzon Valencia - Luis Luva" />
+<style>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #07111f;
-      color: #eaf2ff;
-      line-height: 1.6;
-    }
+html{
+scroll-behavior:smooth;
+}
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
+body{
+background:#071018;
+color:white;
+}
 
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      padding: 18px 8%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: rgba(7, 17, 31, 0.88);
-      backdrop-filter: blur(12px);
-      z-index: 1000;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    }
+header{
+background:linear-gradient(135deg,#071018,#0f2336);
+padding:80px 20px;
+text-align:center;
+}
 
-    .logo {
-      font-size: 1.35rem;
-      font-weight: 900;
-      letter-spacing: 0.5px;
-      color: #38bdf8;
-    }
+.logo{
+width:220px;
+max-width:90%;
+margin-bottom:25px;
+}
 
-    .nav-links {
-      display: flex;
-      gap: 24px;
-      font-size: 0.95rem;
-      color: #cbd5e1;
-    }
+header h1{
+font-size:3rem;
+margin-bottom:15px;
+}
 
-    .nav-links a:hover {
-      color: #38bdf8;
-    }
+header p{
+max-width:900px;
+margin:auto;
+line-height:1.8;
+color:#c6d2dc;
+}
 
-    header {
-      min-height: 100vh;
-      padding: 120px 8% 70px;
-      display: flex;
-      align-items: center;
-      background:
-        linear-gradient(rgba(7, 17, 31, 0.88), rgba(7, 17, 31, 0.96)),
-        radial-gradient(circle at top right, rgba(14, 165, 233, 0.55) 0%, transparent 32%),
-        radial-gradient(circle at bottom left, rgba(34, 197, 94, 0.35) 0%, transparent 32%);
-    }
+.btn{
+display:inline-block;
+margin-top:30px;
+padding:14px 28px;
+background:#00c853;
+color:white;
+text-decoration:none;
+border-radius:10px;
+font-weight:bold;
+transition:0.3s;
+}
 
-    .hero {
-      max-width: 1050px;
-    }
+.btn:hover{
+transform:translateY(-2px);
+}
 
-    .tag {
-      display: inline-block;
-      padding: 8px 14px;
-      border-radius: 999px;
-      background: rgba(56, 189, 248, 0.12);
-      color: #7dd3fc;
-      border: 1px solid rgba(125, 211, 252, 0.25);
-      margin-bottom: 22px;
-      font-size: 0.95rem;
-    }
+.section{
+padding:80px 8%;
+}
 
-    h1 {
-      font-size: clamp(2.4rem, 6vw, 5.1rem);
-      line-height: 1.05;
-      margin-bottom: 22px;
-      letter-spacing: -2px;
-    }
+.section h2{
+font-size:2rem;
+margin-bottom:35px;
+color:#00e676;
+}
 
-    h1 span {
-      color: #38bdf8;
-    }
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
 
-    .hero p {
-      font-size: 1.15rem;
-      color: #cbd5e1;
-      max-width: 850px;
-      margin-bottom: 18px;
-    }
+.stat{
+background:#0d1822;
+padding:25px;
+border-radius:15px;
+text-align:center;
+}
 
-    .hero .intro {
-      font-size: 1.22rem;
-      color: #e2e8f0;
-      font-weight: 500;
-    }
+.stat h3{
+font-size:2rem;
+color:#00e676;
+}
 
-    .buttons {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-      margin-top: 34px;
-    }
+.tech{
+display:flex;
+flex-wrap:wrap;
+gap:12px;
+}
 
-    .btn {
-      padding: 13px 22px;
-      border-radius: 12px;
-      font-weight: 800;
-      transition: 0.25s ease;
-      border: 1px solid transparent;
-      display: inline-block;
-    }
+.tech span{
+background:#10202e;
+padding:10px 18px;
+border-radius:8px;
+}
 
-    .btn-primary {
-      background: #38bdf8;
-      color: #031524;
-      box-shadow: 0 10px 30px rgba(56, 189, 248, 0.28);
-    }
+.featured{
+background:#0d1822;
+border:2px solid #00c853;
+border-radius:20px;
+padding:35px;
+margin-top:30px;
+}
 
-    .btn-primary:hover {
-      transform: translateY(-3px);
-      background: #7dd3fc;
-    }
+.featured h3{
+color:#00e676;
+margin-bottom:15px;
+font-size:1.8rem;
+}
 
-    .btn-secondary {
-      border-color: rgba(255, 255, 255, 0.18);
-      color: #e2e8f0;
-      background: rgba(255, 255, 255, 0.04);
-    }
+.projects{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:25px;
+}
 
-    .btn-secondary:hover {
-      border-color: #38bdf8;
-      color: #38bdf8;
-    }
+.card{
+background:#0d1822;
+padding:25px;
+border-radius:15px;
+transition:.3s;
+}
 
-    section {
-      padding: 90px 8%;
-    }
+.card:hover{
+transform:translateY(-5px);
+}
 
-    .section-title {
-      font-size: 2.25rem;
-      margin-bottom: 14px;
-    }
+.card h3{
+color:#00e676;
+margin-bottom:15px;
+}
 
-    .section-subtitle {
-      color: #94a3b8;
-      max-width: 780px;
-      margin-bottom: 45px;
-    }
+.card p{
+line-height:1.6;
+color:#d4dde5;
+}
 
-    .card {
-      background: rgba(15, 23, 42, 0.78);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 22px;
-      padding: 28px;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.22);
-    }
+.status{
+display:inline-block;
+margin-top:15px;
+padding:8px 12px;
+border-radius:8px;
+background:#153524;
+color:#7cff9b;
+font-size:14px;
+}
 
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 32px;
-      align-items: stretch;
-    }
+footer{
+background:#04080c;
+padding:40px;
+text-align:center;
+color:#90a0ad;
+}
 
-    .card h3 {
-      margin-bottom: 12px;
-      color: #f8fafc;
-    }
+</style>
 
-    .card p {
-      color: #cbd5e1;
-    }
-
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-    }
-
-    .stat {
-      background: rgba(56, 189, 248, 0.08);
-      border: 1px solid rgba(56, 189, 248, 0.14);
-      padding: 22px;
-      border-radius: 18px;
-      text-align: center;
-    }
-
-    .stat h3 {
-      font-size: 2rem;
-      color: #38bdf8;
-    }
-
-    .stat p {
-      color: #cbd5e1;
-      font-size: 0.92rem;
-    }
-
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
-
-    .project-card {
-      overflow: hidden;
-      transition: 0.25s ease;
-    }
-
-    .project-card:hover {
-      transform: translateY(-6px);
-      border-color: rgba(56, 189, 248, 0.35);
-    }
-
-    .project-image {
-      height: 170px;
-      border-radius: 18px;
-      margin-bottom: 20px;
-      background:
-        linear-gradient(135deg, rgba(56, 189, 248, 0.24), rgba(34, 197, 94, 0.18)),
-        radial-gradient(circle at top right, rgba(56, 189, 248, 0.35), transparent 35%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #7dd3fc;
-      font-weight: 900;
-      letter-spacing: 1px;
-      text-align: center;
-      padding: 18px;
-      text-transform: uppercase;
-      font-size: 0.95rem;
-    }
-
-    .project-card h3 {
-      margin-bottom: 10px;
-      font-size: 1.22rem;
-    }
-
-    .project-card p {
-      color: #aebbd0;
-      margin-bottom: 18px;
-      font-size: 0.96rem;
-    }
-
-    .chips {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    .chip {
-      padding: 6px 10px;
-      border-radius: 999px;
-      background: rgba(148, 163, 184, 0.12);
-      color: #cbd5e1;
-      font-size: 0.8rem;
-    }
-
-    .tech-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-    }
-
-    .tech-item {
-      padding: 22px;
-      text-align: center;
-      border-radius: 18px;
-      background: rgba(15, 23, 42, 0.78);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      color: #dbeafe;
-      font-weight: 800;
-    }
-
-    .timeline {
-      display: grid;
-      gap: 18px;
-      max-width: 900px;
-    }
-
-    .timeline-item {
-      display: grid;
-      grid-template-columns: 130px 1fr;
-      gap: 22px;
-      align-items: start;
-    }
-
-    .timeline-date {
-      color: #38bdf8;
-      font-weight: 900;
-    }
-
-    .contact-box {
-      text-align: center;
-      max-width: 780px;
-      margin: auto;
-    }
-
-    .contact-box p {
-      color: #cbd5e1;
-      margin-bottom: 28px;
-    }
-
-    footer {
-      padding: 30px 8%;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-      color: #94a3b8;
-      text-align: center;
-      background: #050b14;
-    }
-
-    @media (max-width: 1000px) {
-      .projects-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .tech-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 760px) {
-      .nav-links {
-        display: none;
-      }
-
-      .about-grid,
-      .projects-grid,
-      .tech-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .timeline-item {
-        grid-template-columns: 1fr;
-      }
-
-      section {
-        padding: 70px 6%;
-      }
-
-      nav {
-        padding: 16px 6%;
-      }
-
-      header {
-        padding: 110px 6% 60px;
-      }
-    }
-  </style>
 </head>
 
 <body>
-  <nav>
-    <a href="#inicio" class="logo">Luis Luva</a>
-    <div class="nav-links">
-      <a href="#sobre-mi">Sobre mí</a>
-      <a href="#proyectos">Proyectos</a>
-      <a href="#tecnologias">Tecnologías</a>
-      <a href="#roadmap">Roadmap</a>
-      <a href="#contacto">Contacto</a>
-    </div>
-  </nav>
 
-  <header id="inicio">
-    <div class="hero">
-      <span class="tag">IoT • Electrónica • Telecomunicaciones • Sistemas Embebidos</span>
+<header>
 
-      <h1>Soluciones inteligentes con <span>ESP32</span>, IoT y automatización.</h1>
+<img src="img/logo.png" alt="Luis Luva" class="logo">
 
-      <p class="intro">
-        Soy Luis Alberto Luzon Valencia, conocido como Luis Luva, ingeniero en Electrónica y Telecomunicaciones orientado al Internet de las Cosas, automatización y sistemas embebidos.
-      </p>
+<h1>Luis Luva</h1>
 
-      <p>
-        Desarrollo soluciones tecnológicas con ESP32, LoRa, sensores, energía solar y diseño PCB, enfocadas en monitoreo, control y automatización de procesos reales. Mi propósito es acercar la tecnología a entornos rurales, agrícolas e industriales mediante proyectos funcionales, escalables y de bajo costo.
-      </p>
+<p>
 
-      <div class="buttons">
-        <a class="btn btn-primary" href="#proyectos">Ver proyectos</a>
-        <a class="btn btn-secondary" href="#contacto">Contactar</a>
-      </div>
-    </div>
-  </header>
+Luis Alberto Luzon Valencia
 
-  <section id="sobre-mi">
-    <h2 class="section-title">Sobre mí</h2>
-    <p class="section-subtitle">
-      Este portafolio reúne mis proyectos de electrónica, programación, automatización e innovación tecnológica.
-    </p>
+<br><br>
 
-    <div class="about-grid">
-      <div class="card">
-        <h3>Perfil técnico</h3>
-        <p>
-          Mi nombre completo es Luis Alberto Luzon Valencia y presento mis proyectos bajo la marca personal Luis Luva.
-        </p>
-        <br />
-        <p>
-          Me enfoco en crear prototipos funcionales con ESP32, sensores, comunicación LoRa, plataformas IoT, relés, fuentes DC-DC, sistemas solares y placas PCB. Busco desarrollar soluciones útiles, económicas y aplicables en zonas rurales, agricultura, energía y control automático.
-        </p>
-        <br />
-        <p>
-          En este espacio comparto avances, códigos, diagramas, fotografías, pruebas reales y mejoras futuras de cada proyecto.
-        </p>
-      </div>
+Ingeniero orientado al desarrollo de sistemas electrónicos,
+IoT, telecomunicaciones, automatización y plataformas
+embebidas basadas en ESP32.
 
-      <div class="stats">
-        <div class="stat">
-          <h3>ESP32</h3>
-          <p>Microcontroladores</p>
-        </div>
-        <div class="stat">
-          <h3>IoT</h3>
-          <p>Monitoreo y control</p>
-        </div>
-        <div class="stat">
-          <h3>LoRa</h3>
-          <p>Comunicación rural</p>
-        </div>
-        <div class="stat">
-          <h3>PCB</h3>
-          <p>Diseño electrónico</p>
-        </div>
-      </div>
-    </div>
-  </section>
+Especializado en diseño de hardware, firmware,
+PCB profesionales, monitoreo remoto, LoRa,
+ThingsBoard y soluciones tecnológicas para
+agricultura, energía e industria.
 
-  <section id="proyectos">
-    <h2 class="section-title">Proyectos destacados</h2>
-    <p class="section-subtitle">
-      Sistemas desarrollados con enfoque en IoT, automatización, energía, agricultura inteligente y control embebido.
-    </p>
+</p>
 
-    <div class="projects-grid">
+<a class="btn" href="https://github.com/luisluzonvalencia-pixel">
+GitHub
+</a>
 
-      <article class="card project-card">
-        <div class="project-image">Smart Irrigation IoT</div>
-        <h3>Sistema de Riego Inteligente IoT con ThingsBoard</h3>
-        <p>
-          Plataforma de monitoreo y control agrícola basada en ESP32, sensores, electroválvula y medición de caudal. Permite supervisar variables del sistema y controlar el riego desde un panel IoT.
-        </p>
-        <div class="chips">
-          <span class="chip">ESP32</span>
-          <span class="chip">ThingsBoard</span>
-          <span class="chip">Electroválvula</span>
-          <span class="chip">Caudal</span>
-        </div>
-      </article>
+</header>
 
-      <article class="card project-card">
-        <div class="project-image">Power Monitor Pro</div>
-        <h3>Power Monitor Pro: Control y Monitoreo Solar IoT</h3>
-        <p>
-          Sistema para supervisar voltaje, temperatura, estado de baterías y control del inversor en una instalación solar. Integra visualización web, protección por umbrales y control remoto de cargas.
-        </p>
-        <div class="chips">
-          <span class="chip">ESP32</span>
-          <span class="chip">Solar</span>
-          <span class="chip">Baterías</span>
-          <span class="chip">Inversor</span>
-        </div>
-      </article>
+<section class="section">
 
-      <article class="card project-card">
-        <div class="project-image">Fuente Variable</div>
-        <h3>Fuente Variable Inteligente con Control PWM</h3>
-        <p>
-          Fuente DC controlada por ESP8266/ESP32 mediante PWM, interfaz web y comandos de voz. Permite seleccionar voltajes rápidos, ajustar la salida y visualizar parámetros como PWM, ADC y pulse width.
-        </p>
-        <div class="chips">
-          <span class="chip">ESP8266</span>
-          <span class="chip">ESP32</span>
-          <span class="chip">PWM</span>
-          <span class="chip">Web App</span>
-        </div>
-      </article>
+<h2>Resumen Profesional</h2>
 
-      <article class="card project-card">
-        <div class="project-image">Incubadora IoT</div>
-        <h3>Incubadora IoT Pro con Alertas por Telegram</h3>
-        <p>
-          Sistema automatizado para control de temperatura, humedad, ventilación y monitoreo remoto. Integra notificaciones por Telegram para alertas, estados críticos y seguimiento del proceso.
-        </p>
-        <div class="chips">
-          <span class="chip">IoT</span>
-          <span class="chip">Telegram</span>
-          <span class="chip">Sensores</span>
-          <span class="chip">Control térmico</span>
-        </div>
-      </article>
+<div class="stats">
 
-      <article class="card project-card">
-        <div class="project-image">Oruga Rover</div>
-        <h3>Oruga Rover: Plataforma Móvil IoT de Exploración</h3>
-        <p>
-          Rover controlado por red local con interfaz web, modo manual y funciones de control para motores, luces, bocina y velocidad. Diseñado como base para exploración, monitoreo y futuras misiones autónomas.
-        </p>
-        <div class="chips">
-          <span class="chip">ESP32</span>
-          <span class="chip">Rover</span>
-          <span class="chip">Web Control</span>
-          <span class="chip">Motores</span>
-        </div>
-      </article>
+<div class="stat">
+<h3>10+</h3>
+<p>Proyectos IoT</p>
+</div>
 
-      <article class="card project-card">
-        <div class="project-image">PCB Control</div>
-        <h3>Módulo PCB de Control con Aislamiento Óptico</h3>
-        <p>
-          Diseño de placa electrónica para control de cargas mediante relés, optoacopladores y separación entre etapa lógica y etapa de potencia. Pensado para sistemas IoT más seguros y ordenados.
-        </p>
-        <div class="chips">
-          <span class="chip">PCB</span>
-          <span class="chip">KiCad</span>
-          <span class="chip">Relés</span>
-          <span class="chip">Optoacopladores</span>
-        </div>
-      </article>
+<div class="stat">
+<h3>ESP32</h3>
+<p>Sistemas Embebidos</p>
+</div>
 
-    </div>
-  </section>
+<div class="stat">
+<h3>PCB</h3>
+<p>Diseño Profesional</p>
+</div>
 
-  <section id="tecnologias">
-    <h2 class="section-title">Tecnologías</h2>
-    <p class="section-subtitle">
-      Herramientas, plataformas y áreas principales usadas en mis proyectos.
-    </p>
+<div class="stat">
+<h3>LoRa</h3>
+<p>Telemetría Inalámbrica</p>
+</div>
 
-    <div class="tech-grid">
-      <div class="tech-item">ESP32</div>
-      <div class="tech-item">ESP8266</div>
-      <div class="tech-item">Arduino IDE</div>
-      <div class="tech-item">ThingsBoard</div>
-      <div class="tech-item">LoRa</div>
-      <div class="tech-item">Telegram Bot</div>
-      <div class="tech-item">KiCad</div>
-      <div class="tech-item">EasyEDA</div>
-      <div class="tech-item">Sensores</div>
-      <div class="tech-item">PWM</div>
-      <div class="tech-item">Energía solar</div>
-      <div class="tech-item">Automatización</div>
-    </div>
-  </section>
+</div>
 
-  <section id="roadmap">
-    <h2 class="section-title">Roadmap</h2>
-    <p class="section-subtitle">
-      Próximos pasos para mejorar y publicar mis proyectos de forma más profesional.
-    </p>
+</section>
 
-    <div class="timeline">
-      <div class="card timeline-item">
-        <div class="timeline-date">Etapa 1</div>
-        <div>
-          <h3>Documentación técnica</h3>
-          <p>Agregar fotos reales, lista de componentes, explicación técnica, diagramas de conexión y pruebas de funcionamiento.</p>
-        </div>
-      </div>
+<section class="section">
 
-      <div class="card timeline-item">
-        <div class="timeline-date">Etapa 2</div>
-        <div>
-          <h3>Publicación de código</h3>
-          <p>Subir programas de ESP32, ESP8266 y proyectos IoT a GitHub con instrucciones claras para que otros puedan replicarlos.</p>
-        </div>
-      </div>
+<h2>Tecnologías</h2>
 
-      <div class="card timeline-item">
-        <div class="timeline-date">Etapa 3</div>
-        <div>
-          <h3>Mejora de prototipos</h3>
-          <p>Crear PCBs, interfaces web más avanzadas, videos demostrativos y versiones más estables de cada sistema.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+<div class="tech">
 
-  <section id="contacto">
-    <div class="contact-box card">
-      <h2 class="section-title">Contacto</h2>
-      <p>
-        ¿Quieres conocer más sobre mis proyectos, colaborar o revisar el código? Puedes contactarme o visitar mis repositorios.
-      </p>
+<span>ESP32</span>
+<span>IoT</span>
+<span>LoRa</span>
+<span>ThingsBoard</span>
+<span>MQTT</span>
+<span>WiFi</span>
+<span>Telegram Bots</span>
+<span>PCB Design</span>
+<span>EasyEDA</span>
+<span>KiCad</span>
+<span>C/C++</span>
+<span>HTML</span>
+<span>CSS</span>
+<span>JavaScript</span>
+<span>Industrial Automation</span>
 
-      <div class="buttons" style="justify-content:center;">
-        <a class="btn btn-primary" href="https://github.com/luisluzonvalencia-pixel" target="_blank">Ver GitHub</a>
-        <a class="btn btn-secondary" href="mailto:tucorreo@example.com">Enviar correo</a>
-      </div>
-    </div>
-  </section>
+</div>
 
-  <footer>
-    <p>© 2026 Luis Alberto Luzon Valencia — Luis Luva. Proyectos ESP32, IoT, electrónica y telecomunicaciones.</p>
-  </footer>
+</section>
+
+<section class="section">
+
+<h2>Proyecto Destacado</h2>
+
+<div class="featured">
+
+<h3>IncuControl X1</h3>
+
+<p>
+
+Plataforma profesional de incubación IoT desarrollada sobre ESP32.
+
+Incluye control PID de temperatura, pantalla táctil TFT,
+sensor SHT31, RTC DS3231, salidas PWM de potencia,
+entradas digitales optoaisladas, entradas analógicas,
+expansión industrial y PCB profesional personalizada.
+
+Actualmente en proceso de fabricación.
+
+</p>
+
+<br>
+
+<span class="status">PCB en fabricación</span>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>Portafolio de Proyectos</h2>
+
+<div class="projects">
+
+<div class="card">
+<h3>Smart Irrigation IoT Platform</h3>
+<p>Sistema inteligente de riego con electroválvulas, monitoreo de caudal y dashboard ThingsBoard.</p>
+<span class="status">Finalizado</span>
+</div>
+
+<div class="card">
+<h3>Solar Energy Monitoring & Control System</h3>
+<p>Monitoreo de baterías, temperatura, voltajes y control energético para sistemas solares.</p>
+<span class="status">Finalizado</span>
+</div>
+
+<div class="card">
+<h3>Intelligent Variable Power Supply</h3>
+<p>Fuente variable inteligente con control PWM, monitoreo web y comandos de voz.</p>
+<span class="status">Finalizado</span>
+</div>
+
+<div class="card">
+<h3>Incubadora IoT SmartEgg</h3>
+<p>Sistema inteligente de incubación con monitoreo remoto y alertas por Telegram.</p>
+<span class="status">Finalizado</span>
+</div>
+
+<div class="card">
+<h3>IncuControl X1</h3>
+<p>Control PID, pantalla touch, RTC, SHT31, expansión industrial y PCB profesional.</p>
+<span class="status">Fabricación PCB</span>
+</div>
+
+<div class="card">
+<h3>RoverBot X</h3>
+<p>Vehículo robótico IoT con control web, teleoperación y expansión para visión artificial.</p>
+<span class="status">Finalizado</span>
+</div>
+
+<div class="card">
+<h3>AgroStation Pro</h3>
+<p>Estación meteorológica inteligente LoRaWAN para agricultura de precisión.</p>
+<span class="status">En desarrollo</span>
+</div>
+
+<div class="card">
+<h3>SmartGrid Home Energy</h3>
+<p>Plataforma inteligente para monitoreo y gestión energética residencial.</p>
+<span class="status">Prototipo</span>
+</div>
+
+<div class="card">
+<h3>AquaNet X</h3>
+<p>Gestión hídrica inteligente mediante sensores remotos y telemetría LoRa.</p>
+<span class="status">Investigación</span>
+</div>
+
+<div class="card">
+<h3>SentinelFarm AI</h3>
+<p>Plataforma agrícola inteligente con IoT, sensores distribuidos y análisis asistido por IA.</p>
+<span class="status">Concepto Avanzado</span>
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>Contacto</h2>
+
+<p style="line-height:2">
+
+Luis Alberto Luzon Valencia
+
+<br>
+
+Luis Luva
+
+<br><br>
+
+Electrónica • IoT • Telecomunicaciones • Sistemas Embebidos
+
+<br><br>
+
+GitHub:
+https://github.com/luisluzonvalencia-pixel
+
+<br>
+
+Portafolio:
+https://luisluzonvalencia-pixel.github.io
+
+</p>
+
+</section>
+
+<footer>
+
+© 2026 Luis Luva
+
+<br><br>
+
+Electronics • IoT • Embedded Systems • Telecommunications
+
+</footer>
+
 </body>
 </html>

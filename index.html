@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luis Luva | IoT • Electrónica • Telecomunicaciones</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+body{font-family:Segoe UI,Arial,sans-serif;background:#07111f;color:#eaf2ff;line-height:1.7}
+nav{position:fixed;top:0;width:100%;padding:18px 8%;display:flex;justify-content:space-between;align-items:center;background:rgba(7,17,31,.9);backdrop-filter:blur(12px);z-index:1000}
+.logo{display:flex;align-items:center;gap:10px;color:#38bdf8;font-weight:800;font-size:1.2rem}
+.logo img{height:42px}
+.nav a{color:#cbd5e1;margin-left:20px;text-decoration:none}
+header{min-height:100vh;padding:120px 8%;display:flex;align-items:center;background:
+linear-gradient(rgba(7,17,31,.92),rgba(7,17,31,.97)),
+radial-gradient(circle at top right,rgba(56,189,248,.25),transparent 30%)}
+.hero img{width:180px;margin-bottom:20px}
+.hero h1{font-size:clamp(3rem,6vw,5rem)}
+.hero h1 span{color:#38bdf8}
+.hero p{max-width:850px;color:#cbd5e1;margin:25px 0}
+.btn{display:inline-block;padding:14px 22px;border-radius:12px;text-decoration:none;font-weight:700}
+.primary{background:#38bdf8;color:#07111f}
+.secondary{border:1px solid #38bdf8;color:#eaf2ff;margin-left:10px}
+section{padding:90px 8%}
+h2{font-size:2.2rem;margin-bottom:12px}
+.subtitle{color:#94a3b8;margin-bottom:35px}
+.grid{display:grid;gap:20px}
+.stats{grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
+.specs{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.projects{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+.card{background:rgba(15,23,42,.8);border:1px solid rgba(255,255,255,.08);padding:24px;border-radius:22px}
+.card:hover{transform:translateY(-4px);transition:.3s}
+.stat{text-align:center}
+.stat h3{color:#38bdf8;font-size:2rem}
+.featured{border:1px solid #38bdf8}
+.project-banner{height:140px;border-radius:14px;background:linear-gradient(135deg,#38bdf844,#22c55e22);display:flex;align-items:center;justify-content:center;font-weight:800;margin-bottom:15px}
+.tech{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:15px}
+.tech div{background:#0f172a;padding:14px;border-radius:12px;text-align:center;border:1px solid rgba(255,255,255,.08)}
+footer{text-align:center;padding:30px;background:#050b14;color:#94a3b8}
+@media(max-width:800px){.nav{display:none}}
+</style>
+</head>
+<body>
+
+<nav>
+<div class="logo"><img src="img/logo.png" alt="logo">LuisLuva</div>
+<div class="nav">
+<a href="#sobre">Sobre mí</a>
+<a href="#proyectos">Proyectos</a>
+<a href="#tecnologias">Tecnologías</a>
+<a href="#contacto">Contacto</a>
+</div>
+</nav>
+
+<header>
+<div class="hero">
+<img src="img/logo.png" alt="Luis Luva">
+<h1>Luis <span>Luva</span></h1>
+<p><strong>Electrónica • IoT • Telecomunicaciones • Sistemas Embebidos</strong></p>
+<p>Soy Luis Alberto Luzon Valencia, conocido profesionalmente como Luis Luva. Desarrollo soluciones tecnológicas basadas en ESP32, LoRa, diseño PCB y plataformas IoT para monitoreo, automatización y control de procesos en aplicaciones agrícolas, energéticas e industriales.</p>
+<a class="btn primary" href="#proyectos">Ver proyectos</a>
+<a class="btn secondary" href="https://github.com/luisluzonvalencia-pixel">GitHub</a>
+</div>
+</header>
+
+<section id="sobre">
+<h2>Sobre mí</h2>
+<p class="subtitle">Portafolio profesional de proyectos de electrónica, automatización e innovación tecnológica.</p>
+<div class="card">
+<p>Luis Alberto Luzon Valencia presenta sus proyectos bajo la marca personal Luis Luva. Su trabajo se enfoca en el desarrollo de hardware, firmware y sistemas inteligentes utilizando ESP32, LoRa, sensores, energía solar, plataformas IoT y diseño PCB profesional.</p>
+</div>
+</section>
+
+<section>
+<div class="grid stats">
+<div class="card stat"><h3>11+</h3><p>Proyectos</p></div>
+<div class="card stat"><h3>ESP32</h3><p>Especialización</p></div>
+<div class="card stat"><h3>LoRa</h3><p>Telemetría</p></div>
+<div class="card stat"><h3>PCB</h3><p>Diseño profesional</p></div>
+</div>
+</section>
+
+<section>
+<h2>Áreas de Especialización</h2>
+<div class="grid specs">
+<div class="card"><h3>Telecomunicaciones</h3><p>LoRa, WiFi, MQTT, telemetría e integración IoT.</p></div>
+<div class="card"><h3>Automatización</h3><p>Control PID, sensores, relés y monitoreo remoto.</p></div>
+<div class="card"><h3>Diseño PCB</h3><p>Desarrollo de placas electrónicas con EasyEDA y KiCad.</p></div>
+<div class="card"><h3>Agricultura Inteligente</h3><p>Riego inteligente, monitoreo ambiental y gestión remota.</p></div>
+</div>
+</section>
+
+<section id="proyectos">
+<h2>Proyecto Destacado</h2>
+<div class="card featured">
+<h3>IncuControl X1</h3>
+<p>Plataforma profesional de incubación inteligente basada en ESP32. Integra control PID, pantalla táctil TFT, RTC DS3231, sensor SHT31, entradas analógicas y digitales, PWM de potencia y una PCB diseñada para aplicaciones reales.</p>
+<p><strong>Estado:</strong> PCB en fabricación.</p>
+</div>
+
+<h2 style="margin-top:50px">Portafolio de Proyectos</h2>
+<div class="grid projects">
+<div class="card"><div class="project-banner">Smart Irrigation IoT</div><h3>Smart Irrigation IoT</h3><p>Sistema inteligente de riego con control de electroválvulas, monitoreo de caudal y plataforma ThingsBoard.</p></div><div class="card"><div class="project-banner">Power Monitor Pro</div><h3>Power Monitor Pro</h3><p>Monitoreo energético para sistemas solares con supervisión de baterías, temperatura y cargas.</p></div><div class="card"><div class="project-banner">Fuente Variable Inteligente</div><h3>Fuente Variable Inteligente</h3><p>Fuente regulable basada en ESP32 con control PWM e interfaz web.</p></div><div class="card"><div class="project-banner">SmartEgg Incubator</div><h3>SmartEgg Incubator</h3><p>Incubadora IoT con monitoreo ambiental y alertas mediante Telegram.</p></div><div class="card"><div class="project-banner">RoverBot X</div><h3>RoverBot X</h3><p>Vehículo robótico controlado por web preparado para futuras funciones autónomas.</p></div><div class="card"><div class="project-banner">PCB Control Module</div><h3>PCB Control Module</h3><p>Módulo de control industrial con aislamiento óptico y relés.</p></div><div class="card"><div class="project-banner">AgroStation Pro</div><h3>AgroStation Pro</h3><p>Estación meteorológica inteligente basada en comunicaciones LoRa.</p></div><div class="card"><div class="project-banner">SmartGrid Home Energy</div><h3>SmartGrid Home Energy</h3><p>Monitoreo y optimización del consumo energético residencial.</p></div><div class="card"><div class="project-banner">AquaNet X</div><h3>AquaNet X</h3><p>Sistema de gestión hídrica mediante sensores y telemetría.</p></div><div class="card"><div class="project-banner">SentinelFarm AI</div><h3>SentinelFarm AI</h3><p>Concepto de agricultura inteligente apoyado por análisis automatizado.</p></div>
+</div></section>
+
+<section id="tecnologias">
+<h2>Tecnologías</h2>
+<div class="tech">
+<div>ESP32</div><div>ESP8266</div><div>LoRa</div><div>MQTT</div>
+<div>ThingsBoard</div><div>Telegram</div><div>KiCad</div><div>EasyEDA</div>
+<div>PCB Design</div><div>HTML</div><div>CSS</div><div>JavaScript</div>
+<div>WiFi</div><div>IoT</div><div>Embedded Systems</div><div>Automatización</div>
+</div>
+</section>
+
+<section id="contacto">
+<div class="card">
+<h2>Contacto</h2>
+<p><strong>Luis Alberto Luzon Valencia</strong> — Luis Luva</p>
+<p>Electronics • IoT • Embedded Systems</p>
+<p>GitHub: github.com/luisluzonvalencia-pixel</p>
+</div>
+</section>
+
+<footer>© 2026 Luis Luva. Todos los derechos reservados.</footer>
+</body></html>
